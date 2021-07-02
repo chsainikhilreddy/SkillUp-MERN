@@ -6,5 +6,6 @@ router.get('/', userController.get_all);
 router.get('/signup', userController.get_signup);
 router.get('/login', userController.get_login);
 router.get('/getUserData', userController.get_userdata);
+router.get('/updateCourses', userController.updateCourses);
 
 module.exports = router;

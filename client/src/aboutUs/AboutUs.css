@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #bfe3f1;
+}
+
+html {
+    box-sizing: border-box;
+    /* background-color: #474e5d; */
+}
+
+.about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #5f9be0;
+    color: white;
+
+}
+
+.hello {
+    font-size: 21px;
+}

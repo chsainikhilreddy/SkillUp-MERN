@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-body {
+.body {
   min-height: 100vh;
   display: flex;
   font-weight: 400;
@@ -10,8 +10,9 @@ body {
   background: #12c2e9;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, blue, white);
+  /* background-image: "url('https://thumbs.dreamstime.com/b/planks-dark-old-wood-texture-background-170515350.jpg')"; */
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom right, rgb(192, 225, 238), rgb(192, 225, 238));
+  /* background: linear-gradient(to bottom right, rgb(192, 225, 238), rgb(192, 225, 238)); */
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
   background-image: url('C:\Users\Pranith\Downloads\skillup.jpeg');
   background-size: cover;*/
@@ -44,7 +45,7 @@ html,
   position: absolute;
   left: 65%;
   top: 15%;
-  background: #ffffff;
+  /* background: #ffffff; */
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
   padding: 40px 55px 45px 55px;
   border-radius: 15px;

@@ -1,0 +1,27 @@
+.cardcolumns {
+    width: '40rem';
+    position: "absolute";
+    top: '10%';
+    left: '20%';
+}
+
+.card {
+    width: '18rem';
+    top: '50%';
+    left: '80%';
+    color: 'blue';
+    background: white;
+}
+
+.cardimg {
+    height: '5px';
+}
+
+.listgroupitem {
+    background: 'white';
+}
+
+.btn {
+    width: '150px';
+    height: '40px';
+}

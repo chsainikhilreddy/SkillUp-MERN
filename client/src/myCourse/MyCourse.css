@@ -1,0 +1,56 @@
+.bodyCourse {
+    position: absolute;
+    left: 29%;
+    top: 39%;
+}
+
+.headCourse {
+    position: absolute;
+    left: 22%;
+    top: 2%;
+}
+
+.week1 {
+    position: relative;
+    left: -15%;
+}
+body{
+    margin: 0;
+    background-color: #bfe3f1;
+}
+#subject {
+    position: relative;
+    width: 600px;
+    height: 190px;
+}
+
+.header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.link {
+    color: #61dafb;
+}
+
+.subject {
+    position: relative;
+    height: 300px;
+    width: 600px;
+}
+
+
+/* @keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+} */
