@@ -17,6 +17,15 @@ const userSchema = new mongoose.Schema({
     courses: {
         type: String,
         required: true
+    },
+    country: {
+        type: String
+    },
+    gender: {
+        type: String
+    },
+    finishedCourses: {
+        type: String
     }
 });
 

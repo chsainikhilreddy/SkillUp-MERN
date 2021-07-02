@@ -1,33 +1,35 @@
-title Test Quiz
-img ijtema_2015.png
+title Java Final Quiz
+img JavaLogo.png
 admincode test
 quizcode test
 
-q What is the return type of a method that does not return any value?
+q Which of the following is not a Java features?
 time 10
 marks 1
-a int
-ac void
-a float
-a double
+a Dynamic
+a Architecture Neutral
+ac Use of pointers
+a Object-oriented
 !
 
-q What is the process of defining more than one method in a class differentiated by method signature?
+q Evaluate the following Java expression, if x=3, y=5, and z=10:
+                        ++z + y - y + z + x++
 time 10
 marks 1
-a Function overriding
-ac Function overloading
-a Function doubling
-a None of the mentioned
+a 24
+a 23
+a 20
+ac 25
 !
 
-q Which method can be defined only once in a program?
-time 10
+q What will be the output of the following program?
+time 20
 marks 1
-ac main method
-a finalize method
-a static method
-a private method
+img 2.jpg
+ac 15 times ***
+a 15 times +++++
+a 8 times *** and 7 times +++++
+a Both will print only once
 !
 
 q In the following Java code, which call to sum() method is appropriate?

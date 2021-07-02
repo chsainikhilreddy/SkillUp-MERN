@@ -15,6 +15,7 @@ import Available from './availableCourses/AvailableCourses';
 import MyCourseJava from './myCourse/MyCourseJava';
 import MyCoursePython from './myCourse/MyCoursePython';
 import MyCourseCPP from './myCourse/MyCourseCPP';
+import Accomplishments from './accomplishments/Accomplishments';
 import Quiz from './quiz/Quiz1';
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -45,7 +46,7 @@ class App extends Component {
 
           <Route path="/dash" component={Dashboard} />
 
-           <Route exact path={["/profile", "/aboutus", "/MainPage", "/AvailableCourses", "/MyCourseJava", "/MyCoursePython", "/courses/MyCourseCPP"]} >
+           <Route exact path={["/profile", "/aboutus", "/MainPage", "/AvailableCourses", "/MyCourseJava", "/MyCoursePython", "/MyCourseCPP", "/Accomplishments"]} >
             <Header />
             <Route path='/profile' component={Profile} />
             <Route path='/aboutus' component={AboutUs} />
@@ -53,7 +54,8 @@ class App extends Component {
             <Route path='/AvailableCourses' component={Available} />
             <Route path='/MyCourseJava' component={MyCourseJava} />
             <Route path='/MyCoursePython' component={MyCoursePython} />
-            <Route path='/courses/MyCourseCPP' component={MyCourseCPP} />
+            <Route path='/MyCourseCPP' component={MyCourseCPP} />
+            <Route path='/Accomplishments' component={Accomplishments} />
             
             {/* <MyCourse/> */}
           </Route>

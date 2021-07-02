@@ -23,7 +23,8 @@ const Login = () => {
                 .then(data => {
                     // console.log(data);
                     if (data[0]) {
-                        localStorage.setItem("user_auth_token", data[0].username);
+                        localStorage.setItem("user_name", data[0].username);
+                        localStorage.setItem("user_courses", data[0].courses);
                         // this.props.history.push("MainPage");
                         history.push("/MainPage");
                         // alert("Success");

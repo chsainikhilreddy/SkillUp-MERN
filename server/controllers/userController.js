@@ -1,8 +1,8 @@
 const user = require('../models/user');
-const express = require("express");
-const router = express.Router();
+// const express = require("express");
+// const router = express.Router();
 // const { MongoClient } = require("mongodb");
-const { MONGODB_URI } = require('dotenv').config({path: "./config/.env"});
+// const { MONGODB_URI } = require('dotenv').config({path: "./config/.env"});
 
 module.exports.get_all = (req, res) => {
     user.find({}, (err, users)=>{
@@ -43,8 +43,29 @@ module.exports.updateCourses = (req, res) => {
     if (req.query) {
         const user1 = {username: req.query.username};
         
-        var newvalues = { $set: {courses: req.query.courses}};
-        console.log(req.query.courses);
+        var newvalues = { $set: {
+            courses: req.query.courses,
+            finishedCourses: req.query.finishedCourses
+        }};
+        // console.log(req.query.courses);
+
+        user.updateOne(user1, newvalues, (err, user) => err ? res.json(err) : res.json(user));
+    } else {
+        res.json("No Course query submitted");
+    }
+}
+
+module.exports.updateProfile = (req, res) => {
+    if (req.query) {
+        const user1 = {username: req.query.old_username};
+        
+        var newvalues = { $set: {
+            username: req.query.username, 
+            email: req.query.email, 
+            country: req.query.country, 
+            gender: req.query.gender,
+            password: req.query.password
+        }};
 
         user.updateOne(user1, newvalues, (err, user) => err ? res.json(err) : res.json(user));
     } else {

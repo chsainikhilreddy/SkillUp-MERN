@@ -12,7 +12,7 @@ export default class Quiz extends Component {
             scrolling="auto" src="http://localhost:4000/connect.html" title="Java Quiz"></iframe> <br /> */}
 
             <frameset rows="100%,*">
-                <frame src="http://localhost:4000/connect.html">
+                <frame src="http://localhost:4000">
                     <noframes>
             
                         <body>

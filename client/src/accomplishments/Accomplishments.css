@@ -1,0 +1,15 @@
+.blocked {
+    visibility: hidden;
+}
+
+.flip {
+    position: absolute;
+    left: 20%;
+    top: 10%;
+}
+body{
+    background-color: #bfe3f1;
+}
+.bloked{
+    display: none;
+}

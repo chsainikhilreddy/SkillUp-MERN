@@ -45,7 +45,7 @@ const Header = () => {
     }
     function initialize() {
       // console.log(localStorage.getItem("user_auth_token"));
-      userName = localStorage.getItem("user_auth_token");
+      userName = localStorage.getItem("user_name");
       // email = localStorage.getItem("user_auth_token");
       
     }
@@ -72,13 +72,13 @@ const Header = () => {
             <Menu iconShape="square">
               <MenuItem icon={<Link to='/MainPage'><FiHome /></Link>}>Home</MenuItem>
               <hr style={{ blockSize: "5px", backgroundColor: "white"}}/>
-              <MenuItem icon={ <Link to='AvailableCourses'><BsBook /></Link>}>Available Courses</MenuItem>
+              <MenuItem icon={ <Link to='/AvailableCourses'><BsBook /></Link>}>Available Courses</MenuItem>
               <hr style={{ blockSize: "5px", backgroundColor: "white"}}/>
               <MenuItem icon = { <Link to='/profile'><CgProfile /></Link>}> Profile</MenuItem>
               <hr style={{ blockSize: "5px", backgroundColor: "white"}}/>
               <MenuItem icon = { <Link to='/aboutus'><RiPencilLine /></Link>}> AboutUs</MenuItem>
               <hr style={{ blockSize: "5px", backgroundColor: "white"}}/>
-              <MenuItem icon = { <Link to='/aboutus'><GiAchievement /></Link>}> Accomplishments</MenuItem>
+              <MenuItem icon = { <Link to='/Accomplishments'><GiAchievement /></Link>}> Accomplishments</MenuItem>
             </Menu>
           </SidebarContent>
           <SidebarFooter>

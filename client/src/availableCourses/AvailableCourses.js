@@ -13,7 +13,7 @@ import {Button, Card, ListGroup, ListGroupItem, CardColumns} from "react-bootstr
 
 
 const Available = () => {
-    const username = localStorage.getItem("user_auth_token");
+    const username = localStorage.getItem("user_name");
     const enrollCourseHandler = (e, course) => {
         e.preventDefault();
         if (e.target.innerHTML === "Enrolled") {
@@ -27,9 +27,10 @@ const Available = () => {
             .then(res => res.json())
             .then(data => {
                 const registeredCourses = data[0].courses + course;
+                const finishedCourses = localStorage.getItem("finishedCourses");
                 console.log(data[0].courses);
                 localStorage.setItem("user_courses", registeredCourses);
-                fetch(`http://localhost:5000/updateCourses?username=${username}&courses=${registeredCourses}`)
+                fetch(`http://localhost:5000/updateCourses?username=${username}&courses=${registeredCourses}&finishedCourses=${finishedCourses}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);

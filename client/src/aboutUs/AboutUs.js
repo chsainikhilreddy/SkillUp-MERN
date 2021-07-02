@@ -16,6 +16,11 @@ const AboutUs = () => {
                 <p className="hello">e-Notes can be prepared from the given videos using speech to text converter.</p>
                 <p className="hello">A real time quiz shall be conducted to the registered users of a course in a given time slot scheduled</p>
                 <p className="hello"> in the calendar. A leaderboard will be displayed comprising the total score and rank of every user.</p>
+                <br /><br /><br /><br /><br /><br />
+                <div style={{color: "black"}}>
+                    <h2>For any queries:</h2>
+                    <p><h4>skillup737@gmail.com</h4></p>
+                </div>
             </center>
             </div>
          </div>

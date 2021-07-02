@@ -63,6 +63,26 @@ const MyCourseJava = () => {
             document.getElementById("subject3").value="it's static and import so in this video we'll talk about static import now when you want to work with the let's say you want to print something in in Java let's so you want to play in hello so when you want to print something we always use system dot out dot println and in bracket we mentioned the parameters beyond two you want to Train now this print Ln it's a method which belongs to print stream class and in order to use a println we need to create object of print stream which is out and Java says don't worry I have already created an object for you and it below it resides in a class system now this out object it's a it's a static reference so you can see it's a static reference and that's why we have mentioned here static so whenever you want to work or when you want to call out we need to use system so it's a qualified way of calling out right now let's say you want to print hundred statements to print those hundred statements we want to use 100 system dot out dot println now sure of doing that what we can simply do is we can say import Java dot lines in a system belongs to line package and we say system and we can give a semicolon but hold on wait also if I remove this will it work now we need to also mention there is something called as out here so we are importing what was the error now I've made some mistake is it there's a problem oh what's the problem here now the problem is this out is not a normal object is the static reference ID so we have to mention a key word here which is called as study so we have to mention use import static space Java dot Lang dot system dot out and the advantage will be do not have to mention this system class every time you want to use this you can simply say out dot println simple right that's how you use static inputs so just to expand this example I have a class created here which is called as sample now you can see in this sample class I have a method called as show which is a static method and in order to call this show we need to use sample as a qualifier right so you have to mention in order to call show we have to mention sample dot show so every time you want to call show dimensions sample there and that's why we can print hello and hi right hi this hi is printed using this show method but instead of using that what we can simply do is we can say we can import R which is a package name triple a sample dot we can mention show but again this show is not a normal class as the method right we are also starting method we have to mention that as a with the above static keyboard so when we mention static keyboard we don't have to mention sample we can simply use show and control ship hi all right so now let's run this so if I run this you can see again hello hi simple right and that's how we use static imports in Java so yeah thanks for watching and make sure you subscribe my channel for further videos";
         }
     }
+    const endCourse = (e) => {
+        e.preventDefault();
+        const username = localStorage.getItem("user_name");
+        const registeredCourses = localStorage.getItem("user_courses");
+        var finishedCourses = localStorage.getItem("finishedCourses");
+        if (finishedCourses !== null && finishedCourses !== undefined && finishedCourses.includes("1")) {
+            return ;
+        }
+        if (!finishedCourses) {
+            finishedCourses = "";
+        }
+        finishedCourses += "1";
+        localStorage.setItem("finishedCourses", finishedCourses); 
+        fetch(`http://localhost:5000/updateCourses?username=${username}&courses=${registeredCourses}&finishedCourses=${finishedCourses}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+
+            });
+    }
     function Summary(e) {
         e.preventDefault();
         fetch("https://enelyou-enelyou-summarization--index--summary--topic--part-of-s.p.rapidapi.com/superstring/?m=tokencount&q=This%20is%20text%20to%20be%20analyzed.", {
@@ -98,30 +118,32 @@ const MyCourseJava = () => {
             </div>
             <div className="bodyCourse">
                 <div className="week1">
-                <h3>WEEK 1</h3></div>
+                    <h3>WEEK 1</h3>
+                </div>
                 <iframe width="760" height="515" src="https://www.youtube.com/embed/8cm1x4bC610" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe><br />
                 <textarea id="subject" name="subject" placeholder="Summary...." ></textarea>
                 <Button onClick = {Summary} style={{ position:"absolute", top:"20%" ,width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
                 <textarea  id="subject1" className="subject" placeholder="Transcribe...." ></textarea>
                 <Button onClick={e => SummaryHandler(e, "1")}  style={{ position:"absolute", top:"27%" ,width: '150px', height: '40px'}} variant="primary">Transcribe </Button><br /><br />
                 
-                <button><Link to='/quiz'>Quiz-1</Link></button>
+                <Button><Link to='/quiz' style={{color: "white",textDecoration: "none"}}>Quiz-1</Link></Button>
 
             <div className="week1"><h3>WEEK 2</h3></div>
             <iframe width="760" height="515" src="https://www.youtube.com/embed/fGcKEFwIhhI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> <br />
                 <textarea id="subject" name="subject" placeholder="Summary...." ></textarea>
-                <Button style={{position:"absolute", top:"53%" , width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
+                <Button style={{position:"absolute", top:"52%" , width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
                 <textarea id="subject2" className="subject" placeholder="Transcribe...." ></textarea>
-                <Button onClick={e => SummaryHandler(e, "2")} style={{ position:"absolute", top:"62%" ,width: '150px', height: '40px'}} variant="primary">Transcribe</Button><br />
+                <Button onClick={e => SummaryHandler(e, "2")} style={{ position:"absolute", top:"58%" ,width: '150px', height: '40px'}} variant="primary">Transcribe</Button><br />
                 <br /><br />
                 <div className="week1"><h3>WEEK 3</h3></div>
                 <iframe width="760" height="515" src="https://www.youtube.com/embed/kHWcA4X2anE" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe><br />
                 <textarea id="subject" name="subject" placeholder="Summary.." ></textarea>
-                <Button style={{position:"absolute", top:"89%" , width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
+                <Button style={{position:"absolute", top:"85%" , width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
                 <textarea id="subject3" className="subject" placeholder="Transcribe...." ></textarea>
-                <Button onClick={e => SummaryHandler(e, "3")} style={{position:"absolute", top:"94%" , width: '150px', height: '40px'}} variant="primary">Transcribe</Button><br />
-                <button><Link to='/quiz'>Final Quiz</Link></button><br />
-               <center> <button name="end">End Course</button><br /></center>
+                <Button onClick={e => SummaryHandler(e, "3")} style={{position:"absolute", top:"91%" , width: '150px', height: '40px'}} variant="primary">Transcribe</Button><br />
+                <Button><Link to='/quiz' style={{color: "white",textDecoration: "none"}}>Quiz-2</Link></Button>
+                <br /><br />
+                <center><Button onClick={endCourse} className="btn btn-secondary" name="end">End Course</Button><br /></center>
             </div>
             <h1 style={{position:"absolute", top:"495%", left:"25%"}}>Record your own notes Here.</h1>
             <h2 style={{position:"absolute", top:"504%", left:"25%"}}>Voice Notes</h2>
@@ -143,7 +165,7 @@ const MyCourseJava = () => {
                     <h2>Notes:</h2>
                     {savedNotes.map(n => (
                         <p key={n}>{n}</p>
-                    ))}                
+                    ))}
                 </div>
                
             </div>

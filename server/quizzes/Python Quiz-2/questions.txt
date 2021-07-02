@@ -1,0 +1,99 @@
+title Python Final Quiz
+img Pythonlogo.png
+admincode test
+quizcode test
+
+
+
+q Which module in Python supports regular expressions?
+time 10
+marks 1
+ac re
+a regex
+a pyregex
+a none of the mentioned
+!
+
+
+q Which of the following creates a pattern object?
+time 10
+marks 1
+a re.create(str)
+a re.regex(str)
+ac re.compile(str)
+a re.assemble(str)
+!
+
+q What does the function re.match do?
+time 10
+marks 1
+ac matches a pattern at the start of the string
+a matches a pattern at any position in the string
+a such a function does not exist
+a none of the mentioned
+!
+
+q Which of the following is not a class method?
+time 10
+marks 1
+ac Non-static
+a Static
+a Bounded
+a Unbounded
+!
+
+
+q What are the methods which begin and end with two underscore characters called?
+time 10
+marks 1
+ac Special methods
+a In-built methods
+a User-defined methods
+a Additional methods
+!
+
+q What is hasattr(obj,name) used for?
+time 10
+marks 1
+a To access the attribute of the object
+a To delete an attribute
+ac To check if an attribute exists or not
+a To set an attribute
+!
+
+
+q  How many except statements can a try-except block have?
+time 10
+marks 1
+a zero
+a one
+a more than one
+ac more than zero
+!
+
+q What will be the output of the following Python code, if the time module has already been imported? "" 4 + '3' ""
+time 10
+marks 1
+a NameError
+a IndexError
+a ValueError
+ac TypeError
+!
+
+q What will be the output of the following Python code? "" int('65.43') ""
+time 10
+marks 1
+a ImportError
+ac ValueError
+a TypeError
+a NameError
+!
+
+q Which of the following statements is true?
+time 10
+marks 1
+ac The standard exceptions are automatically imported into Python programs
+a All raised standard exceptions must be handled in Python
+a When there is a deviation from the rules of a programming language, a semantic error is thrown
+a If any exception is thrown in try block, else block is executed
+!

@@ -14,7 +14,7 @@ const Signup = () => {
         const password = document.getElementById("input-password").value;//e.target.password.value;
         const courses = ".";
         console.log(username, email, password, courses);
-        await emailjs.send("service_6wucfyi","template_8eh9gia",{username: "Ben", email: "benithatripuraneni19@gmail.com"},"user_88yNOvmOO0XBEDoLByDmH")
+        await emailjs.send("service_6wucfyi","template_8eh9gia",{username: username, email: email},"user_88yNOvmOO0XBEDoLByDmH")
         .then((result) => {
             console.log(result.text);
         }, (error) => {
@@ -22,7 +22,12 @@ const Signup = () => {
         });
         await fetch(`http://localhost:5000/signup?username=${username}&email=${email}&password=${password}&courses=${courses}`)
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data);
+                console.log(data.courses);
+                localStorage.setItem("user_courses", data.courses);
+            })
+            .then(localStorage.setItem("user_name", username))
             .then(history.push("/MainPage"));
         
         // e.target.username.value = "";

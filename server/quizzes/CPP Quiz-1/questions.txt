@@ -1,0 +1,95 @@
+title Cpp Quiz
+img CppLogo.png
+admincode test
+quizcode test
+
+
+q Which of the following is the correct syntax to add the header file in the C++ program?
+time 10
+marks 1
+a #include<userdefined>
+a #include "userdefined.h"
+a <include> "userdefined.h"
+ac Both A and B
+!
+
+q Which of the following is the correct syntax to print the message in C++ language?
+time 10
+marks 1
+ac cout <<"Hello world!";
+a Cout << Hello world! ;
+a Out <<"Hello world!;
+a None of the above
+!
+
+q Which of the following features must be supported by any programming language to become a pure object-oriented programming language?
+time 10
+marks 1
+a Encapsulation
+a Inheritance
+a Polymorphism
+ac All of the above
+!
+
+q The programming language that has the ability to create new data types is called___.
+time 10
+marks 1
+a Overloaded
+a Encapsulated
+a Reprehensible
+ac Extensible
+!
+
+q  Which of the following is the correct syntax to read the single character to console in the C++ language?
+time 10
+marks 1
+a Read ch()
+a Getline vh()
+ac get(ch)
+a Scanf(ch)
+!
+
+q  Which of the following comment syntax is correct to create a single-line comment in the C++ program?
+time 10
+marks 1
+ac //Comment
+a /Comment/
+a Comment//
+a None of the above
+!
+
+q  For inserting a new line in C++ program, which one of the following statements can be used?
+time 10
+marks 1
+ac \n
+a \r
+a \a
+a None of the above
+!
+
+q Which of the following refers to characteristics of an array?
+time 10
+marks 1
+ac An array is a set of similar data items
+a An array is a set of distinct data items
+a An array can hold different types of datatypes
+a None of the above
+!
+
+q In C++, for what purpose the "rank()" is used?
+time 10
+marks 1
+a It returns the size of each dimension
+a It returns the maximum number of elements that can be stored in the array
+ac It returns the dimension of the specified array
+a None of the above
+!
+
+q Which of the following can be considered as the object of an array?
+time 10
+marks 1
+a Index of an array
+ac Elements of the Array
+a Functions of the Array
+a All of the above
+!

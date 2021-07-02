@@ -11,22 +11,24 @@ import {Button, Card, ListGroup, ListGroupItem, CardColumns} from "react-bootstr
 export default class MainPage extends Component {
     render() {
         require("./HomePage.css");
-        
+        const username = localStorage.getItem("user_name");
         const initialize = () => {
-            var courses = localStorage.getItem("user_courses");
-            fetch(`http://localhost:5000/getUserData?username=Rutherford`)
-                .then(res => res.json())
-                .then(data => {
-                    if (courses !== null) {
-                        for (const course of courses) {
-                            if ("123".includes(course)) {
-                                // console.log(course + "Card");
-                                document.getElementById(course + "Card").className = "unblocked";
-                            }
-                        }
+            setTimeout(function() {
+                //do what you need here
+                var courses = localStorage.getItem("user_courses");
+                console.log(courses);
+                if (!courses) {
+                    return ;
+                }
+                for (const course of courses) {
+                    if ("123".includes(course)) {
+                        // console.log(course + "Card");
+                        document.getElementById(course + "Card").className = "unblocked";
                     }
-                });
-        };
+                }
+            }, 10);
+            
+        }
         initialize();
         return (
             <div className= "bodyBack">
@@ -101,7 +103,7 @@ export default class MainPage extends Component {
                                         <ListGroupItem style= {{background: 'white'}}>4 Hours</ListGroupItem>
                                     </ListGroup>
                                     <Card.Body>
-                                    <Link to='/courses/MyCourseCPP'><Button style={{ width: '150px', height: '40px'}} variant="primary">Open Course</Button></Link>
+                                    <Link to='MyCourseCPP'><Button style={{ width: '150px', height: '40px'}} variant="primary">Open Course</Button></Link>
                                     </Card.Body>
                                 </Card>
                             </CardColumns>

@@ -1,5 +1,6 @@
 import {Button} from "react-bootstrap";
 // import "./MyCourse.css";
+import {Link} from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 
 
@@ -74,7 +75,23 @@ const MyCoursePython = () => {
         setSavedNotes([...savedNotes, note])
         setNote('')
     }
+    const endCourse = (e) => {
+        e.preventDefault();
+        const username = localStorage.getItem("user_name");
+        const registeredCourses = localStorage.getItem("user_courses");
+        var finishedCourses = localStorage.getItem("finishedCourses");
+        if (finishedCourses !== null && finishedCourses !== undefined && finishedCourses.includes("2")) {
+            return ;
+        }
+        finishedCourses += "2";
+        localStorage.setItem("finishedCourses", finishedCourses);
+        fetch(`http://localhost:5000/updateCourses?username=${username}&courses=${registeredCourses}&finishedCourses=${finishedCourses}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
 
+            });
+    }
     return (
         <div>
             <div className="headCourse">
@@ -88,31 +105,38 @@ const MyCoursePython = () => {
             <div className="bodyCourse">
                 <div className="week1">
                 <h3>WEEK 1</h3></div>
-                <iframe width="760" height="515" src="https://www.youtube.com/embed/P1vH3Pfw6BI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br />
+                <iframe width="760" height="515" src="https://www.youtube.com/embed/P1vH3Pfw6BI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe><br />
                 <textarea id="subject" name="subject" placeholder="Summary.." ></textarea>
                 <Button style={{ position:"absolute", top:"19%" ,width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
                 <textarea id="subject1" className="subject" placeholder="Transcribe..." ></textarea>
                 <Button onClick={SummaryHandler1}  style={{ position:"absolute", top:"26%" ,width: '150px', height: '40px'}} variant="primary">Transcribe</Button><br />
                     <br /><br />
+                <Button><Link to='/quiz' style={{color: "white",textDecoration: "none"}}>Quiz-1</Link></Button>
               
             <div className="week1"><h3>WEEK 2</h3></div>
-            <iframe width="760" height="515" src="https://www.youtube.com/embed/fsAzeNZXvkE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br />
+            <iframe width="760" height="515" src="https://www.youtube.com/embed/fsAzeNZXvkE" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe><br />
                 <textarea id="subject" name="subject" placeholder="Summary.." ></textarea>
-                <Button style={{position:"absolute", top:"53%" , width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
+                <Button style={{position:"absolute", top:"51%" , width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
                 <textarea id="subject2" className="subject" placeholder="Transcribe." ></textarea>
-                <Button onClick={SummaryHandler2}  style={{ position:"absolute", top:"60%" ,width: '150px', height: '40px'}} variant="primary">Transcribe</Button><br />
+                <Button onClick={SummaryHandler2}  style={{ position:"absolute", top:"58%" ,width: '150px', height: '40px'}} variant="primary">Transcribe</Button><br />
                 <br /><br />
 
                 <div className="week1"><h3>WEEK 3</h3></div>
-                <iframe width="760" height="515" src="https://www.youtube.com/embed/UAMMEmga0WI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br />
+                <iframe width="760" height="515" src="https://www.youtube.com/embed/UAMMEmga0WI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe><br />
                 <textarea id="subject" name="subject" placeholder="Summary.." ></textarea>
-                <Button  style={{position:"absolute", top:"87%" , width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
+                <Button  style={{position:"absolute", top:"82%" , width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
                 <textarea id="subject3" className="subject" placeholder="Transcribe...." ></textarea>
-                <Button onClick={SummaryHandler3} style={{position:"absolute", top:"94%" , width: '150px', height: '40px'}} variant="primary">Transcribe</Button><br />
+                <Button onClick={SummaryHandler3} style={{position:"absolute", top:"89%" , width: '150px', height: '40px'}} variant="primary">Transcribe</Button><br />
+                <br /><br />
+                <Button><Link to='/quiz' style={{color: "white",textDecoration: "none"}}>Quiz-2</Link></Button>
+                <br /><br />
+                <center><Button onClick={endCourse} className="btn btn-secondary" name="end">End Course</Button><br /></center>
+                <br /><br />
             </div>
-            <h1 style={{position:"absolute", top:"490%", left:"25%"}}>Record your own notes Here.</h1>
-            <h2 style={{position:"absolute", top:"500%", left:"25%"}}>Voice Notes</h2>
-            <div className="container" style={{position:"absolute", top:"515%", left:"30%"}}>
+
+            <h1 style={{position:"absolute", top:"500%", left:"25%"}}>Record your own notes Here.</h1>
+            <h2 style={{position:"absolute", top:"510%", left:"25%"}}>Voice Notes</h2>
+            <div className="container" style={{position:"absolute", top:"517%", left:"30%"}}>
                 <div className="box">
                     <h2>Current Note</h2>
                     {isListening ? <span role="img" aria-label="mic">🎙️</span> : <span role="img" aria-label="mic-start">🛑🎙️</span>}

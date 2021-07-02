@@ -1,0 +1,94 @@
+title Cpp Final Quiz
+img CppLogo.png
+admincode test
+quizcode test
+
+
+q What does polymorphism in OOPs mean?
+time 10
+marks 1
+ac Concept of allowing overiding of functions
+a Concept of hiding data
+a Concept of keeping things in differnt modules/files
+a Concept of wrapping things into a single unit
+!
+
+q Which concept allows you to reuse the written code?
+time 10
+marks 1
+a Encapsulation
+a Abstraction
+ac Inheritance
+a Polymorphism
+!
+
+q The size_t integer type in C++ is?
+time 10
+marks 1
+a Unsigned integer of at least 64 bits
+a Signed integer of at least 16 bits
+ac Unsigned integer of at least 16 bits
+a Signed integer of at least 64 bits
+!
+
+q Which of these expressions will return true if the input integer v is a power of two?
+time 10
+marks 1
+a (v | (v + 1)) == 0;
+a (~v & (v – 1)) == 0;
+a (v | (v – 1)) == 0;
+ac (v & (v – 1)) == 0;
+!
+
+q Which of these expressions will isolate the rightmost set bit?
+time 10
+marks 1
+a x = x & (~x)
+a x = x ^ (~x)
+ac x = x & (-x)
+a x = x ^ (-x)
+!
+
+q  0946, 786427373824, ‘x’ and 0X2f are _____ _____ ____ and _____ literals respectively.
+time 10
+marks 1
+a decimal, character, octal, hexadecimal
+a octal, hexadecimal, character, decimal
+a hexadecimal, octal, decimal, character
+ac octal, decimal, character, hexadecimal
+!
+
+q What is an inline function?
+time 10
+marks 1
+ac A function that is expanded at each call during execution
+a A function that is called during compile time
+a A function that is not checked for semantic analysis
+!
+
+q An inline function is expanded during ______________
+time 10
+marks 1
+ac compile-time
+a run-time
+a never expanded
+a end of the program
+!
+
+q  When we define the default values for a function?
+time 10
+marks 1
+a When a function is defined
+ac When a function is declared
+a When the scope of the function is over
+a When a function is called
+!
+
+q  Which of the following feature is used in function overloading and function with default argument?
+time 10
+marks 1
+a Encapsulation
+ac Polymorphism
+a Abstraction
+a Modularity
+!

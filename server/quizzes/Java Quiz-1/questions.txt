@@ -1,0 +1,57 @@
+title Java Quiz
+img JavaLogo.png
+admincode test
+quizcode test
+
+q What is the return type of a method that does not return any value?
+time 10
+marks 1
+a int
+ac void
+a float
+a double
+!
+
+q What is the process of defining more than one method in a class differentiated by method signature?
+time 10
+marks 1
+a Function overriding
+ac Function overloading
+a Function doubling
+a None of the mentioned
+!
+
+q Which method can be defined only once in a program?
+time 10
+marks 1
+ac main method
+a finalize method
+a static method
+a private method
+!
+
+q In the following Java code, which call to sum() method is appropriate?
+time 10
+marks 1
+img 1.png
+a only sum(10)
+a only sum(10,20)
+a only sum(10) & sum(10,20)
+ac all of the mentioned
+!
+
+q Which of the following is not OOPS concept in Java?
+time 10
+marks 1
+a Inheritance
+a Encapsulation
+a Polymorphism
+ac Compilation
+!
+
+q Method overriding is combination of inheritance and polymorphism?
+time 10
+marks 1
+ac True
+a False
+!
