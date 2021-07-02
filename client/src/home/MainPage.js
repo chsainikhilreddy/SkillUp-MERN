@@ -11,7 +11,7 @@ import {Button, Card, ListGroup, ListGroupItem, CardColumns} from "react-bootstr
 export default class MainPage extends Component {
     render() {
         require("./HomePage.css");
-        const username = localStorage.getItem("user_name");
+        // const username = localStorage.getItem("user_name");
         const initialize = () => {
             setTimeout(function() {
                 //do what you need here
@@ -79,12 +79,12 @@ export default class MainPage extends Component {
                                     <Card.Body>
                                         <Card.Title><b>PYTHON</b></Card.Title>
                                         <Card.Text>
-                                        Python is an interpreted, object-oriented, high-level programming language with dynamic semantics
+                                        Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.
                                         </Card.Text>
                                     </Card.Body>
                                     <ListGroup className="list-group-flush">
                                         <ListGroupItem style= {{background: 'white'}}>Time to complete</ListGroupItem>
-                                        <ListGroupItem style= {{background: 'white'}}>4 Hours</ListGroupItem>
+                                        <ListGroupItem style= {{background: 'white'}}>3 Hours</ListGroupItem>
                                     </ListGroup>
                                     <Card.Body>
                                     <Link to='/MyCoursePython'><Button style={{ width: '150px', height: '40px'}} variant="primary">Open Course</Button></Link>

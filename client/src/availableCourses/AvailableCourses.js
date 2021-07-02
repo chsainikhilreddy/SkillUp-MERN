@@ -41,15 +41,9 @@ const Available = () => {
     };
 
     const initialize = () => {
-        // e.preventDefault();
-        var registeredCourses;
-        console.log(username);
-        // if (localStorage.getItem("user_courses") !== null) {
-        //     // registeredCourses = localStorage.getItem("user_courses");
-        //     registeredCourses = "1";
-        //     console.log(registeredCourses + " hi ");
-        //     [...registeredCourses].forEach((item) => document.getElementById(item + "Button").innerHTML = "Enrolled");
-        // } else {
+        setTimeout(function() {
+            var registeredCourses;
+            console.log(username);
             fetch(`http://localhost:5000/getUserData?username=${username}`)
                 .then(res => res.json())
                 .then(data => {
@@ -63,6 +57,7 @@ const Available = () => {
                         }
                     }
                 });
+        }, 10);
         // }
     };
     initialize();
@@ -85,7 +80,7 @@ const Available = () => {
                 </Card.Body>
                 <ListGroup className="list-group-flush">
                     <ListGroupItem style= {{background: 'white'}}>Time to complete</ListGroupItem>
-                    <ListGroupItem style= {{background: 'white'}}>4 Hours</ListGroupItem>
+                    <ListGroupItem style= {{background: 'white'}}>3 Hours</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
                   <Button id = "1Button" onClick={e => enrollCourseHandler(e,"1")} style={{ width: '150px', height: '40px'}} variant="primary">Enroll</Button>
@@ -96,7 +91,7 @@ const Available = () => {
                   <Card.Body>
                       <Card.Title><b>PYTHON</b></Card.Title>
                       <Card.Text>
-                      Python is an interpreted, object-oriented, high-level programming language with dynamic semantics
+                      Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.
                       </Card.Text>
                   </Card.Body>
                   <ListGroup className="list-group-flush">
@@ -110,9 +105,9 @@ const Available = () => {
               <Card style={{ width: '18rem', position: 'absolute', top: '24%', left: '68%', color: 'blue', background: 'white' }}>
                   <Card.Img style={{height: '150px'}} variant="top" src="https://www.educative.io/v2api/editorpage/5393602882568192/image/6038586442907648" />
                   <Card.Body>
-                      <Card.Title><b>Cpp</b></Card.Title>
+                      <Card.Title><b>CPP</b></Card.Title>
                       <Card.Text>
-                      C++ is a powerful programming language, created by Bjarne Stroustrup as an extension of the C.
+                      C++ is an object oriented programming language, created as an extension of the C.
                       </Card.Text>
                   </Card.Body>
                   <ListGroup className="list-group-flush">

@@ -1,3 +1,4 @@
+
 var states = {START:0,TEST_QUESTION:1,STARTING:2,SHOW_QUESTION:3,SHOW_ANSWER:4,END:5};
 
 function Quizzes(){

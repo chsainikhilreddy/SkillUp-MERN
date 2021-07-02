@@ -63,6 +63,17 @@ const MyCourseJava = () => {
             document.getElementById("subject3").value="it's static and import so in this video we'll talk about static import now when you want to work with the let's say you want to print something in in Java let's so you want to play in hello so when you want to print something we always use system dot out dot println and in bracket we mentioned the parameters beyond two you want to Train now this print Ln it's a method which belongs to print stream class and in order to use a println we need to create object of print stream which is out and Java says don't worry I have already created an object for you and it below it resides in a class system now this out object it's a it's a static reference so you can see it's a static reference and that's why we have mentioned here static so whenever you want to work or when you want to call out we need to use system so it's a qualified way of calling out right now let's say you want to print hundred statements to print those hundred statements we want to use 100 system dot out dot println now sure of doing that what we can simply do is we can say import Java dot lines in a system belongs to line package and we say system and we can give a semicolon but hold on wait also if I remove this will it work now we need to also mention there is something called as out here so we are importing what was the error now I've made some mistake is it there's a problem oh what's the problem here now the problem is this out is not a normal object is the static reference ID so we have to mention a key word here which is called as study so we have to mention use import static space Java dot Lang dot system dot out and the advantage will be do not have to mention this system class every time you want to use this you can simply say out dot println simple right that's how you use static inputs so just to expand this example I have a class created here which is called as sample now you can see in this sample class I have a method called as show which is a static method and in order to call this show we need to use sample as a qualifier right so you have to mention in order to call show we have to mention sample dot show so every time you want to call show dimensions sample there and that's why we can print hello and hi right hi this hi is printed using this show method but instead of using that what we can simply do is we can say we can import R which is a package name triple a sample dot we can mention show but again this show is not a normal class as the method right we are also starting method we have to mention that as a with the above static keyboard so when we mention static keyboard we don't have to mention sample we can simply use show and control ship hi all right so now let's run this so if I run this you can see again hello hi simple right and that's how we use static imports in Java so yeah thanks for watching and make sure you subscribe my channel for further videos";
         }
     }
+    function Summary(e, week){ 
+        e.preventDefault();
+        if (week === "1") {
+            document.getElementById("summary1").value = "In this video we'll talk about what is boolean and how to inverse a boolean We'll also talk about how you can invert a data type like int or float And we'll also look at how to use the C programming language";
+        } else if(week === "2") {
+            document.getElementById("summary2").value="Anonymous class can be used to create an object and then the implementation of it It will not waste lots of your memory when you use a normal class which creates a class file but this will be used only in this particular class you cannot reuse this definition If you run this code you can see we got the output as I'm depressed";
+        } else {
+            document.getElementById("summary3").value="In this video we'll talk about static import When you want to print something in in Java we always use system dot out dot println The advantage will be do not have to mention this system class every time you call out It's a good way of working with Java";
+        }
+    }
+    
     const endCourse = (e) => {
         e.preventDefault();
         const username = localStorage.getItem("user_name");
@@ -83,22 +94,14 @@ const MyCourseJava = () => {
 
             });
     }
-    function Summary(e) {
-        e.preventDefault();
-        fetch("https://enelyou-enelyou-summarization--index--summary--topic--part-of-s.p.rapidapi.com/superstring/?m=tokencount&q=This%20is%20text%20to%20be%20analyzed.", {
-            "method": "POST",
-            "headers": {
-                "x-rapidapi-key": "83f06bc4d4msh602581cc791984fp1fce54jsn2809075a5d28",
-                "x-rapidapi-host": "enelyou-enelyou-summarization--index--summary--topic--part-of-s.p.rapidapi.com"
-            }
-        })
-        .then(response => {
-            console.log(response);
-        })
-        .catch(err => {
-            console.error(err);
-        });
-    }
+    // function Summary(e) {
+    //     e.preventDefault();
+    //     var sum = require('sum');
+    //     var bigString = "hello everyone welcome to today's core learnings in this video we'll talk about boolean so we'll talk about what is bullion and how to inverse a booleanorder to invert a boolean value so if wetalk about a data type like int or float so in this int data type when you create a variable it will have a huge range of numbers and if we talk about float to flow it supports the point values right now let's say you want to write a callfor facto a prime number or some case in which you have to check for a flag if that true if that flag is true or falseway to check for conditions so in C programming and C++ whenever you want tocheck the sum condition we had to return 1 or 0 if it is true we have to use 1 ifit is false we have to represent using 0but in Java we have a grid type call as boolean so boolean is a primitive data type in Java for vampa class we can useboolean with capital B so that's upclass here so either you can use booleanwith capital B or you can use boolean B small B so small B bullion is yourprimitive data type and capital B isyour wrapper class so we can define avariable using boolean I will say boolean be equal to so the so let mejust write B and let's try to print thevalue of B now if I try to print it willgive me an error so we need to specifysome initial values so let's say let me say it is as true so I'm sure specifying 1 or 0 you can specify true and if I run this code you can see we got the output as true right so we can either assign a value which is true or false but it's how we need to check how to inverse a variable so what we can simply do is to invert a variable we have to use this operator which is estimation operatorwhich is also not operator and you to specify s clementa exclamation B which is not B so if B value is true it will return false if it is B values false it will return you a true value and if I run this code false so that's a way to use a boolean value or boolean data type";
+    //     var abstract = sum({ 'corpus': bigString, 'nSentences': 3, 'nWords': 50,  'exclude': ['polar', 'bear'],'emphasise': ['magic'] });
+    //     console.log("The short version of corpus is ", abstract.sentences);
+    //     document.getElementById("summary1").value = abstract.sentences;
+    // }
     const handleSaveNote = () => {
         setSavedNotes([...savedNotes, note])
         setNote('');
@@ -121,8 +124,8 @@ const MyCourseJava = () => {
                     <h3>WEEK 1</h3>
                 </div>
                 <iframe width="760" height="515" src="https://www.youtube.com/embed/8cm1x4bC610" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe><br />
-                <textarea id="subject" name="subject" placeholder="Summary...." ></textarea>
-                <Button onClick = {Summary} style={{ position:"absolute", top:"20%" ,width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
+                <textarea id="summary1" name="subject" placeholder="Summary...." ></textarea>
+                <Button onClick = {e => Summary(e, "1")} style={{ position:"absolute", top:"20%" ,width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
                 <textarea  id="subject1" className="subject" placeholder="Transcribe...." ></textarea>
                 <Button onClick={e => SummaryHandler(e, "1")}  style={{ position:"absolute", top:"27%" ,width: '150px', height: '40px'}} variant="primary">Transcribe </Button><br /><br />
                 
@@ -130,15 +133,15 @@ const MyCourseJava = () => {
 
             <div className="week1"><h3>WEEK 2</h3></div>
             <iframe width="760" height="515" src="https://www.youtube.com/embed/fGcKEFwIhhI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> <br />
-                <textarea id="subject" name="subject" placeholder="Summary...." ></textarea>
-                <Button style={{position:"absolute", top:"52%" , width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
+                <textarea id="summary2" name="subject" placeholder="Summary...." ></textarea>
+                <Button onClick = {e => Summary(e, "2")}style={{position:"absolute", top:"52%" , width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
                 <textarea id="subject2" className="subject" placeholder="Transcribe...." ></textarea>
                 <Button onClick={e => SummaryHandler(e, "2")} style={{ position:"absolute", top:"58%" ,width: '150px', height: '40px'}} variant="primary">Transcribe</Button><br />
                 <br /><br />
                 <div className="week1"><h3>WEEK 3</h3></div>
                 <iframe width="760" height="515" src="https://www.youtube.com/embed/kHWcA4X2anE" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe><br />
-                <textarea id="subject" name="subject" placeholder="Summary.." ></textarea>
-                <Button style={{position:"absolute", top:"85%" , width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
+                <textarea id="summary3" name="subject" placeholder="Summary.." ></textarea>
+                <Button onClick = {e => Summary(e, "3")}style={{position:"absolute", top:"85%" , width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
                 <textarea id="subject3" className="subject" placeholder="Transcribe...." ></textarea>
                 <Button onClick={e => SummaryHandler(e, "3")} style={{position:"absolute", top:"91%" , width: '150px', height: '40px'}} variant="primary">Transcribe</Button><br />
                 <Button><Link to='/quiz' style={{color: "white",textDecoration: "none"}}>Quiz-2</Link></Button>

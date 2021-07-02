@@ -18,7 +18,7 @@ body{
     margin: 0;
     background-color: #bfe3f1;
 }
-#subject {
+#subject, #summary1, #summary2, #summary3 {
     position: relative;
     width: 600px;
     height: 190px;

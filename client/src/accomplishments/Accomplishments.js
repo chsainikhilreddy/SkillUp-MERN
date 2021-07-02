@@ -22,6 +22,7 @@ const FlippyStyle = {
         }}
       >
         <img
+          alt="image1"
           src="https://stackify.com/wp-content/uploads/2018/09/Java-Debugging-Tips-881x441.jpg"
           style={{ maxWidth: '100%', maxHeight: '100%' }}
         />
@@ -73,6 +74,7 @@ const PythonDefault = ({ children }) => (
       }}
     >
       <img
+        alt="image2"
         src="https://content.techgig.com/thumb/msid-80100245,width-1200,height-900,resizemode-4/80100245.jpg"
         style={{ maxWidth: '100%', maxHeight: '100%' }}
       />
@@ -124,6 +126,7 @@ const CPPDefault = ({ children }) => (
         }}
       >
         <img
+          alt="image3"
           src="https://www.educative.io/v2api/editorpage/5393602882568192/image/6038586442907648"
           style={{ maxWidth: '100%', maxHeight: '100%' }}
         />
@@ -199,7 +202,7 @@ const FlippyOnHover = ({ flipDirection = 'vertical' }) => (
   );
 
 const Accomplishments = () => {
-    const ref = useRef();
+    useRef();
     const username = localStorage.getItem("user_name");
     const initialize = () => {
     fetch(`http://localhost:5000/getUserData?username=${username}`)

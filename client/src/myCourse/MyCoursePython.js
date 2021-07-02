@@ -70,7 +70,16 @@ const MyCoursePython = () => {
         document.getElementById("subject3").value = "welcome back aliens my name is Ivan ready and in this video we will talk about how do you access the previous commands in IDL II now when you work on Python you know so we write a lot of code right example if I want to add two numbers or if I want to perform some operation like X equal to two plus four plus nine now in this case when you say hit enter and if you want to access the same command again can you do it normally what happens iswhen you work on CMD what we'd get is let's see if if I perform any operation here example up again this is not a command in Windows but let's try so when I say up and if I want to get the same command again we just need to press up arrow right so when you say up arrow you will get this you know we know when you work with ipconfig and you get this and again if I want the same command you can say enter just you just say up and enter you get it that's not the case with IDL e in this case if you want to access that we don't have by default option so what you have to do is you just need to go to options and then you have to click on configure ideally and here you need to click on keys now we need to find the history right so just scroll down to search for history so it is your history previous now by default it will be I guess alt P in your machine because I've changed it in my earlier session if you want to change it just click on that and select get new keys for selection and here you can select the up arrow so you can see we have up arrow click on OK and click on OK now so if you want to access the last element or last command you just say up add when you get the command now of course when you are new to Python you will not be knowing this but once you start working on it you will be needing this command a lot so this is how you find the previous command I got some more questions you know after the video so let's say for if you reach here and in Windows we have this command every CLS so when you say CLS it clears the command I know that's not the case here you know so that's not the case in ideal you cannot simply clear this screen even if I try we don't have anything here I guess you can write some script which works on Python shell but that's not that doesn't work and ideally the only way you can do that is by closing idea in reopen it okay now if you have seen my videos in my videos I have done that you know so I was scrolling up but I was not rolling in ideally so it was a animation effect when I was editing my video I made sure that it goes up so that you can you can see those things normally so the editing is done so that you can view it so I have not scrolled on idla so as for my knowledge it is not possible maybe there might be some hidden script or some technique so if you know that let me know in the comment section so that it will be helpful for everyone so that's it that's how you get the previous command and that's how you that's that's the answer for your question about how to clear the screen so that's it everyone thanks for watching I hope you're enjoying my CDs rekt me in the comment section so that's it bye bye";
     }
 
-
+    function Summary(e, week){ 
+        e.preventDefault();
+        if (week === "1") {
+            document.getElementById("summary1").value = "The series on Python continues with a look at polymorphism Polymorphism is one of the major concepts in oops and it's very important when you talk about software development In the next few videos we are going to talk about duck typing overloading and method overriding We will also talk about polymorphism as well as other ways of implementing it";
+        } else if(week === "2") {
+            document.getElementById("summary2").value="Python is a programming language that allows you to pass multiple arguments at the same time The problem statement is if a user gives you a list of elements you need to pass that least in a function that function will return you the number of even and odd numbers and then you have to return two values If I pass at least in that list you will be having multiple values you just need to return the number of even numbers and odd numbers right so we'll try it";
+        } else {
+            document.getElementById("summary3").value="In this video we will talk about how do you access the previous commands in IDL II When you work on Python you write a lot of code right example if I want to add two numbers or perform some operation like X equal to two plus four plus nine Python is a programming language where you can control the last element or last command If you reach here and in Windows we have this command every CLS so when you say CLS it clears the command You cannot simply clear this screen even if I try we don't have anything here";
+        }
+    }
     const handleSaveNote = () => {
         setSavedNotes([...savedNotes, note])
         setNote('')
@@ -82,6 +91,9 @@ const MyCoursePython = () => {
         var finishedCourses = localStorage.getItem("finishedCourses");
         if (finishedCourses !== null && finishedCourses !== undefined && finishedCourses.includes("2")) {
             return ;
+        }
+        if (!finishedCourses) {
+            finishedCourses = "";
         }
         finishedCourses += "2";
         localStorage.setItem("finishedCourses", finishedCourses);
@@ -106,8 +118,8 @@ const MyCoursePython = () => {
                 <div className="week1">
                 <h3>WEEK 1</h3></div>
                 <iframe width="760" height="515" src="https://www.youtube.com/embed/P1vH3Pfw6BI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe><br />
-                <textarea id="subject" name="subject" placeholder="Summary.." ></textarea>
-                <Button style={{ position:"absolute", top:"19%" ,width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
+                <textarea id="summary1" name="subject" placeholder="Summary.." ></textarea>
+                <Button onClick = {e => Summary(e, "1")} style={{ position:"absolute", top:"19%" ,width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
                 <textarea id="subject1" className="subject" placeholder="Transcribe..." ></textarea>
                 <Button onClick={SummaryHandler1}  style={{ position:"absolute", top:"26%" ,width: '150px', height: '40px'}} variant="primary">Transcribe</Button><br />
                     <br /><br />
@@ -115,16 +127,16 @@ const MyCoursePython = () => {
               
             <div className="week1"><h3>WEEK 2</h3></div>
             <iframe width="760" height="515" src="https://www.youtube.com/embed/fsAzeNZXvkE" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe><br />
-                <textarea id="subject" name="subject" placeholder="Summary.." ></textarea>
-                <Button style={{position:"absolute", top:"51%" , width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
+                <textarea id="summary2" name="subject" placeholder="Summary.." ></textarea>
+                <Button onClick = {e => Summary(e, "2")} style={{position:"absolute", top:"51%" , width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
                 <textarea id="subject2" className="subject" placeholder="Transcribe." ></textarea>
                 <Button onClick={SummaryHandler2}  style={{ position:"absolute", top:"58%" ,width: '150px', height: '40px'}} variant="primary">Transcribe</Button><br />
                 <br /><br />
 
                 <div className="week1"><h3>WEEK 3</h3></div>
                 <iframe width="760" height="515" src="https://www.youtube.com/embed/UAMMEmga0WI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe><br />
-                <textarea id="subject" name="subject" placeholder="Summary.." ></textarea>
-                <Button  style={{position:"absolute", top:"82%" , width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
+                <textarea id="summary3" name="subject" placeholder="Summary.." ></textarea>
+                <Button  onClick = {e => Summary(e, "3")}style={{position:"absolute", top:"82%" , width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
                 <textarea id="subject3" className="subject" placeholder="Transcribe...." ></textarea>
                 <Button onClick={SummaryHandler3} style={{position:"absolute", top:"89%" , width: '150px', height: '40px'}} variant="primary">Transcribe</Button><br />
                 <br /><br />
