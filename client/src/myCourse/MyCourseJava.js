@@ -3,15 +3,12 @@ import {Button} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 
-
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const mic = new SpeechRecognition();
 
 mic.continuous = true;
 mic.interimResults = true;
 mic.lang = 'en-US';
-
-
 
 const MyCourseJava = () => {
     require("./MyCourse.css");
@@ -76,6 +73,7 @@ const MyCourseJava = () => {
     
     const endCourse = (e) => {
         e.preventDefault();
+        alert("You have successfully finished the course!");
         const username = localStorage.getItem("user_name");
         const registeredCourses = localStorage.getItem("user_courses");
         var finishedCourses = localStorage.getItem("finishedCourses");
@@ -94,14 +92,6 @@ const MyCourseJava = () => {
 
             });
     }
-    // function Summary(e) {
-    //     e.preventDefault();
-    //     var sum = require('sum');
-    //     var bigString = "hello everyone welcome to today's core learnings in this video we'll talk about boolean so we'll talk about what is bullion and how to inverse a booleanorder to invert a boolean value so if wetalk about a data type like int or float so in this int data type when you create a variable it will have a huge range of numbers and if we talk about float to flow it supports the point values right now let's say you want to write a callfor facto a prime number or some case in which you have to check for a flag if that true if that flag is true or falseway to check for conditions so in C programming and C++ whenever you want tocheck the sum condition we had to return 1 or 0 if it is true we have to use 1 ifit is false we have to represent using 0but in Java we have a grid type call as boolean so boolean is a primitive data type in Java for vampa class we can useboolean with capital B so that's upclass here so either you can use booleanwith capital B or you can use boolean B small B so small B bullion is yourprimitive data type and capital B isyour wrapper class so we can define avariable using boolean I will say boolean be equal to so the so let mejust write B and let's try to print thevalue of B now if I try to print it willgive me an error so we need to specifysome initial values so let's say let me say it is as true so I'm sure specifying 1 or 0 you can specify true and if I run this code you can see we got the output as true right so we can either assign a value which is true or false but it's how we need to check how to inverse a variable so what we can simply do is to invert a variable we have to use this operator which is estimation operatorwhich is also not operator and you to specify s clementa exclamation B which is not B so if B value is true it will return false if it is B values false it will return you a true value and if I run this code false so that's a way to use a boolean value or boolean data type";
-    //     var abstract = sum({ 'corpus': bigString, 'nSentences': 3, 'nWords': 50,  'exclude': ['polar', 'bear'],'emphasise': ['magic'] });
-    //     console.log("The short version of corpus is ", abstract.sentences);
-    //     document.getElementById("summary1").value = abstract.sentences;
-    // }
     const handleSaveNote = () => {
         setSavedNotes([...savedNotes, note])
         setNote('');
@@ -123,7 +113,8 @@ const MyCourseJava = () => {
                 <div className="week1">
                     <h3>WEEK 1</h3>
                 </div>
-                <iframe width="760" height="515" src="https://www.youtube.com/embed/8cm1x4bC610" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe><br />
+                <iframe width="760" height="515" src="https://www.youtube.com/embed/tpP8EQE8DNU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                {/* <iframe width="760" height="515" src="https://www.youtube.com/embed/8cm1x4bC610" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe><br /> */}
                 <textarea id="summary1" name="subject" placeholder="Summary...." ></textarea>
                 <Button onClick = {e => Summary(e, "1")} style={{ position:"absolute", top:"20%" ,width: '150px', height: '40px'}} variant="primary">Summarize </Button><br />
                 <textarea  id="subject1" className="subject" placeholder="Transcribe...." ></textarea>
@@ -145,8 +136,9 @@ const MyCourseJava = () => {
                 <textarea id="subject3" className="subject" placeholder="Transcribe...." ></textarea>
                 <Button onClick={e => SummaryHandler(e, "3")} style={{position:"absolute", top:"91%" , width: '150px', height: '40px'}} variant="primary">Transcribe</Button><br />
                 <Button><Link to='/quiz' style={{color: "white",textDecoration: "none"}}>Quiz-2</Link></Button>
-                <br /><br />
-                <center><Button onClick={endCourse} className="btn btn-secondary" name="end">End Course</Button><br /></center>
+                <br />
+                <center ><Button onClick={endCourse} className="btn btn-secondary" name="end">End Course</Button><br /></center>
+                <br /> <br />
             </div>
             <h1 style={{position:"absolute", top:"495%", left:"25%"}}>Record your own notes Here.</h1>
             <h2 style={{position:"absolute", top:"504%", left:"25%"}}>Voice Notes</h2>
@@ -157,7 +149,6 @@ const MyCourseJava = () => {
                     <button onClick={handleSaveNote} disabled={!note}>
                         Save Note
                     </button>
-                    {/* <div  style={{position:"absolute", top:"500%", left:"25%"}}><button >End course</button></div> */}
                     <button onClick={() => setIsListening(prevState => !prevState)}>
                         Start/Stop
                     </button>

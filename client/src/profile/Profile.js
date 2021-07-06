@@ -1,7 +1,6 @@
 import React from 'react'
 import './Profile.css';
 
-
 const Profile = () => {
     
     const UpdateDetails = (e) => {
@@ -12,6 +11,7 @@ const Profile = () => {
         const country = document.getElementById("input-country").value;
         const gender = document.getElementById("input-gender").value;
         const password = document.getElementById("input-password").value;
+        alert("Your profile is updated successfully");
         
         console.log(old_username, username, email, country, gender);
         fetch(`http://localhost:5000/updateProfile?old_username=${old_username}&username=${username}&email=${email}&country=${country}&gender=${gender}&password=${password}`)
@@ -22,7 +22,6 @@ const Profile = () => {
                 window.location.reload(false);
             })
     }
-    
     return (
         <div className="container rounded bg-white mt-5" id="hello"> 
             <div className="row">

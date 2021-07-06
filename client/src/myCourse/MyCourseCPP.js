@@ -87,6 +87,7 @@ const MyCourseCPP = () => {
     }
     const endCourse = (e) => {
         e.preventDefault();
+        alert("You have successfully finished the course!");
         const username = localStorage.getItem("user_name");
         const registeredCourses = localStorage.getItem("user_courses");
         var finishedCourses = localStorage.getItem("finishedCourses");

@@ -86,6 +86,7 @@ const MyCoursePython = () => {
     }
     const endCourse = (e) => {
         e.preventDefault();
+        alert("You have successfully finished the course!");
         const username = localStorage.getItem("user_name");
         const registeredCourses = localStorage.getItem("user_courses");
         var finishedCourses = localStorage.getItem("finishedCourses");
@@ -146,9 +147,10 @@ const MyCoursePython = () => {
                 <br /><br />
             </div>
 
-            <h1 style={{position:"absolute", top:"500%", left:"25%"}}>Record your own notes Here.</h1>
-            <h2 style={{position:"absolute", top:"510%", left:"25%"}}>Voice Notes</h2>
-            <div className="container" style={{position:"absolute", top:"517%", left:"30%"}}>
+            <h1 style={{position:"absolute", top:"507%", left:"25%"}}>Record your own notes Here.</h1>
+            <h2 style={{position:"absolute", top:"515%", left:"25%"}}>Voice Notes</h2>
+            
+            <div className="container" style={{position:"absolute", top:"522%", left:"30%"}}>
                 <div className="box">
                     <h2>Current Note</h2>
                     {isListening ? <span role="img" aria-label="mic">🎙️</span> : <span role="img" aria-label="mic-start">🛑🎙️</span>}
@@ -170,5 +172,6 @@ const MyCoursePython = () => {
         </div>
     );
 }
+
 
 export default MyCoursePython;

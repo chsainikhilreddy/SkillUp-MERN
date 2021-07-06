@@ -1,16 +1,5 @@
-//import Card from "react-bootstrap/Card";
-// import ListGroup from "react-bootstrap/ListGroup";
-// import ListGroupItem from "react-bootstrap/ListGroupItem";
-// import Button from "react-bootstrap/Button";
 import React from "react";
-// import {Link} from "react-router-dom";
 import {Button, Card, ListGroup, ListGroupItem, CardColumns} from "react-bootstrap";
-// import {Card,CardDeck} from "react-bootstrap";
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Container } from "react-bootstrap";
-// import  CardColumns from "react-bootstrap/CardColumns";
-
-
 
 const Available = () => {
     const username = localStorage.getItem("user_name");
@@ -20,7 +9,6 @@ const Available = () => {
             return ;
         }
         e.target.innerHTML = "Enrolled";
-        // const username = localStorage.getItem("user_auth_token");
         console.log(course, username);
         
         fetch(`http://localhost:5000/getUserData?username=${username}`)
@@ -37,7 +25,6 @@ const Available = () => {
 
                 });
             });
-        // console.log(registeredCourses);
     };
 
     const initialize = () => {
@@ -47,14 +34,17 @@ const Available = () => {
             fetch(`http://localhost:5000/getUserData?username=${username}`)
                 .then(res => res.json())
                 .then(data => {
-                    registeredCourses = data[0].courses;
-                    // console.log(registeredCourses);
-                    localStorage.setItem("user_courses", data[0].courses);
-                    for (const item of registeredCourses) {
-                        // console.log(item);
-                        if ("123".includes(item)) {
-                            document.getElementById(item + "Button").innerHTML = "Enrolled";
+                    console.log(data);
+                    if (data[0].courses) {
+                        registeredCourses = data[0].courses;
+                        localStorage.setItem("user_courses", data[0].courses);
+                        for (const item of registeredCourses) {
+                            if ("123".includes(item)) {
+                                document.getElementById(item + "Button").innerHTML = "Enrolled";
+                            }
                         }
+                    } else {
+                        localStorage.setItem("user_courses",".");
                     }
                 });
         }, 10);

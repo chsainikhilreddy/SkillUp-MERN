@@ -1,29 +1,25 @@
 import React, { Component } from "react";
-// import Carousel from 'react-bootstrap/Carousel';
-// import './HomePage.css';
-// import DropdownButton from "react-bootstrap/DropdownButton";
 import {Dropdown, DropdownButton} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {Button, Card, ListGroup, ListGroupItem, CardColumns} from "react-bootstrap";
 
-
-// const MainPage = () => {
 export default class MainPage extends Component {
     render() {
         require("./HomePage.css");
-        // const username = localStorage.getItem("user_name");
         const initialize = () => {
             setTimeout(function() {
-                //do what you need here
                 var courses = localStorage.getItem("user_courses");
+                var finishedCourses = localStorage.getItem("finishedCourses");
                 console.log(courses);
                 if (!courses) {
                     return ;
                 }
                 for (const course of courses) {
                     if ("123".includes(course)) {
-                        // console.log(course + "Card");
                         document.getElementById(course + "Card").className = "unblocked";
+                        if (finishedCourses && finishedCourses.includes(course)) {
+                            document.getElementById(course + "Button").innerHTML = "Completed!";
+                        }
                     }
                 }
             }, 10);
@@ -36,26 +32,19 @@ export default class MainPage extends Component {
                     <div className = "nav_icon"></div>
                     <div className ="dashboard"> <h1><b> DASHBOARD </b></h1></div>
                     <DropdownButton id="dropdown-basic-button" title="Announcements" style={{ position: 'fixed', width: '18rem', left: '85%' , top: "10%" }}>
-                        <Dropdown.Item href="#/action-1"> New Course Added 'Python'</Dropdown.Item>
+                        {/* <Dropdown.Item href="#/action-1"> New Course Added 'Python'</Dropdown.Item>
                         <Dropdown.Divider></Dropdown.Divider>
                         <Dropdown.Item href="#/action-2">New Course Added 'Java'</Dropdown.Item>
-                        <Dropdown.Divider></Dropdown.Divider>
-                        <Dropdown.Item href="#/action-3">Welcome to Skill Up</Dropdown.Item>
-                        <Dropdown.Divider></Dropdown.Divider>
-
-                        {/* <textarea> Howareyou</textarea> */}
+                        <Dropdown.Divider></Dropdown.Divider> */}
+                        <Dropdown.Item href="#">Welcome to Skill Up</Dropdown.Item>
+                        {/* <Dropdown.Divider></Dropdown.Divider> */}
                     </DropdownButton>
                 </nav>
                 
                 <div>
                     <h3 style = {{ position: 'absolute', top: '30%', left: '25%' } } > My Courses </h3> 
                     <p style = {{ position: 'absolute', top: '35%', left: '25%' } } > ______________________________________________________________________________________________________ </p> 
-                    {/* <p style = { { position: 'absolute', top: '60%', left: '30%' } } > No courses enrolled. </p> */}
                     <div>
-                        {/* <div>
-                            <h3 style= {{ position: 'absolute', top: '15%', left: '22%'}}> <b> Available courses</b> </h3>
-                            <p style={{ position: 'absolute',top: '18%', left: '21%' }}>______________________________________________________________________________________________________</p>
-                        </div> */}
                         <div className= "courseCard">
                             <CardColumns style={{width: '40rem'}}>     
                                 <Card  id = "1Card" className = "blocked" style={{ width: '18rem', position: 'absolute', top:'44%', left: '22%', color: 'blue', background: 'white' }}>
@@ -71,7 +60,7 @@ export default class MainPage extends Component {
                                         <ListGroupItem style= {{background: 'white'}}>4 Hours</ListGroupItem>
                                     </ListGroup>
                                     <Card.Body>
-                                    <Link to='/MyCourseJava'><Button style={{ width: '150px', height: '40px'}} variant="primary">Open Course</Button></Link>
+                                    <Link to='/MyCourseJava'><Button style={{ width: '150px', height: '40px'}} variant="primary" id="1Button">Open Course</Button></Link>
                                     </Card.Body>
                                 </Card>
                                 <Card id = "2Card" className = "blocked" style={{ width: '18rem', position: 'absolute', top: '44%', left: '45%', color: 'blue', background: 'white' }}>
@@ -87,7 +76,7 @@ export default class MainPage extends Component {
                                         <ListGroupItem style= {{background: 'white'}}>3 Hours</ListGroupItem>
                                     </ListGroup>
                                     <Card.Body>
-                                    <Link to='/MyCoursePython'><Button style={{ width: '150px', height: '40px'}} variant="primary">Open Course</Button></Link>
+                                    <Link to='/MyCoursePython'><Button style={{ width: '150px', height: '40px'}} variant="primary" id="2Button">Open Course</Button></Link>
                                     </Card.Body>
                                 </Card>
                                 <Card id = "3Card" className = "blocked" style={{ width: '18rem', position: 'absolute', top: '44%', left: '68%', color: 'blue', background: 'white' }}>
@@ -103,7 +92,7 @@ export default class MainPage extends Component {
                                         <ListGroupItem style= {{background: 'white'}}>4 Hours</ListGroupItem>
                                     </ListGroup>
                                     <Card.Body>
-                                    <Link to='MyCourseCPP'><Button style={{ width: '150px', height: '40px'}} variant="primary">Open Course</Button></Link>
+                                    <Link to='MyCourseCPP'><Button style={{ width: '150px', height: '40px'}} variant="primary" id="3Button">Open Course</Button></Link>
                                     </Card.Body>
                                 </Card>
                             </CardColumns>
@@ -115,5 +104,3 @@ export default class MainPage extends Component {
         );
     }
 }
-
-// export default MainPage;
